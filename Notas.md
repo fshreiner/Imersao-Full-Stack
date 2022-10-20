@@ -54,5 +54,62 @@ Porém, falando de Full Cycle, vamos além, e falamos de habilidades que engloba
 	- Istio, Kiali, Prometheus & Grafana
 
 
-44:00
+
+# Apache Kafka (Conceitos Básicos)
+
+Por quê utilizar?
+Palavra-chave: Event-Driven
+
+Event-driven
+Tudo movido à eventos! Ex:
+- Carros
+- E-commerce
+- Alarmes
+- Monitoramento
+- Microserviços
+
+Atualmente, tudo se baseia em eventos gerados, o evento  gera todo um processamento por trás do evento, tudo simultâneo, e o Kafka vem para ajudar em tudo que possui eventos. O Kafka é um sistema em tempo real, ele tem uma latência baixa, e ao receber o evento dispara as ações muito rapidamente. Outro ponto é o histórico de dados, ele se sobresai nisto, pois guarda todo um histórico de eventos registrados, podemos escolher o tempo de retenção, e desta forma até mesmo para se adequar a LGPD, temos um rastro de todos dados.
+
+Características do Kafka:
+- Funcionar como plataforma
+- Trabalha de forma distribuída
+- Banco de dados integrado
+- Extremamente rápido e com baixa latência
+- Utiliza o disco ao invés de memória para processar os dados
+
+**Não é apenas um sistema tradicional de filas como RabbitMQ.**
+
+Conceito básico:
+- Topic
+	- Stream de dados que atua como um banco de dados
+	- Todos os dados ficam armazenados, ou seja, cada "Topic" tem seu "local" para armazenar seus dados
+	- Tópico possui diversas particões
+		- Cada partição é definida por um número. Ex: 0, 1, 2
+		- Você é obrigado a definir a quantidade de partições quando for criar um topic
+		- ![[Pasted image 20221020143418.png]]
+		- ![[Pasted image 20221020143616.png]]
+- Kafka Cluster
+	- Conjunto de Brokers (Máquina com Kafka instalado)
+	- Cada Broker é um servidor
+	- Cada Broker é responsável por armazenar os dados de uma partição
+	- Cada partição de Topic está distribuído em diferentes Brokers
+	- ![[Pasted image 20221020143949.png]]
+	- ![[Pasted image 20221020144049.png]]
+	- Replication Factor faz o Kafka ser muito poderoso, pois ele replica os dados de partições em vários brokers, assim os dados tem constante disponibilidade, com redundância de dados.
+	- ![[Pasted image 20221020144239.png]]
+	- O Kafka utiliza atualmente o ZooKeeper, que monitora os Brokers, e faz todo balanceamento na responsabilidade de cada Broker
+	- O producer manda mensagens ao Kafka, e o Kafka fica responsável pelo encaminhamento da mensagem, após enviar ao broker ele vai controlando o Offset (log da mensagem)
+	- ![[Pasted image 20221020161129.png]]
+	- Após isto, temos os consumers, sistemas responsáveis por consumir as mensagens que chegam ao Kafta
+- Ecossistema
+	- Kafka Connect
+		- Connectors (Recebe dados de um sistema, e toda vez que esse sistema atualizar ele envia a alteração ao Kafka, e do Kafka os dados são enviados a um destino, transporte de dados de um lado pro outro inteligente)
+	- Confluent Schema Registry
+		- Você cria o Schema da mensagem a ser enviada, garantindo o padrão das mensagens
+	- Rest Proxy
+	- ksqDB (Uma espécie de SQL do Kafka, permite diretamente no Kafka rodar "comandos de banco")
+	- Streams (Manipulador de Informações do Kafka)
+
+
+01:18:00
 
