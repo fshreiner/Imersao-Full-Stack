@@ -2,9 +2,18 @@ package main
 
 import (
 	"fmt"
+	"log"
 
-	route2 "github.com/fshreiner/Imersao-Full-Stack/tree/main/code-delivery/simulator-aluno/Application/route"
+	route2 "github.com/fshreiner/Imersao-Full-Stack/tree/main/code-delivery/simulator-aluno/application/route"
+	"github.com/joho/godotenv"
 )
+
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("error loading .env file")
+	}
+}
 
 func main() {
 	route := route2.Route{
