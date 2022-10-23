@@ -1,7 +1,7 @@
 
 Foco do curso: Trabalhar com microserviços, apresentar esta forma de tecnologia e demonstrar um processo completo de desenvolvimento de arquitetura, ambiente, aplicação e posteriormente monitoramento.
 
-Ferramentas a utilizar: Go Lang, Nactive JS, React, Kafta, Kafka Connect, Docker, Kubernets e Elastic Stack.
+Ferramentas a utilizar: Go Lang, NestJS, React, Kafta, Kafka Connect, Docker, Kubernets e Elastic Stack.
 
 
 
@@ -111,5 +111,12 @@ Conceito básico:
 	- Streams (Manipulador de Informações do Kafka)
 
 
-01:45:00
 
+
+
+
+
+
+
+
+# Aula 2 - NestJS e o Backend orientado a microsserviços
